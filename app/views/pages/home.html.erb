@@ -1,5 +1,11 @@
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 <div ng-app="app">
-  <div ng-controller="pagesCtrl">
-    {{message}}
+  <div ng-controller="pagesCtrl" ng-init="setup()">
+    <h1>Firebase messages</h1>
+    <input placeholder="new message" ng-model="newMessageText">
+    <button ng-click="createMessage(newMessageText)">Submit</button>
+    <div ng-repeat="message in messages">
+      <p>{{ message.name }}: {{ message.text }}</p>
+    </div>
   </div>
 </div>
